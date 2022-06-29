@@ -1,0 +1,145 @@
+[
+    {
+        "id": 1,
+        "command": "ls",
+        "command_name": "list",
+        "command_description": "short for list, shows all the files/folder where you currently are.",
+        "week": 1,
+        "subject": "file management",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": null,
+        "optional_parameters": null
+    },
+    {
+        "id": 2,
+        "command": "cd <required argument>",
+        "command_name": "change directory",
+        "command_description": "go to a different directory or file",
+        "week": 1,
+        "subject": "file management",
+        "required_for_code_to_work": true,
+        "required_parameters_or_arguments": "what file or directory you want to navigate to",
+        "optional_parameters": null
+    },
+    {
+        "id": 3,
+        "command": "pwd",
+        "command_name": "present working directory",
+        "command_description": "tell you where you are in the filesystem",
+        "week": 1,
+        "subject": "file management",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": null,
+        "optional_parameters": null
+    },
+    {
+        "id": 4,
+        "command": "touch <required argument>",
+        "command_name": "touch",
+        "command_description": "create a new file.",
+        "week": 1,
+        "subject": "file management",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": "the new name",
+        "optional_parameters": null
+    },
+    {
+        "id": 5,
+        "command": "cat <required argument>",
+        "command_name": "concatenate",
+        "command_description": "prints out the contents of the file",
+        "week": 1,
+        "subject": "file management",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": "name of file",
+        "optional_parameters": null
+    },
+    {
+        "id": 6,
+        "command": "mv <somefile> <~/Downloads> || mv <somefile> <anothername>",
+        "command_name": "move",
+        "command_description": "used to move or rename a file.",
+        "week": 1,
+        "subject": "file management",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": "argument 1: what to rename it, argument 2: where to move it || argument 1: what to rename it, argument 2: what your renaming it",
+        "optional_parameters": null
+    },
+    {
+        "id": 7,
+        "command": "git init",
+        "command_name": "git initialize",
+        "command_description": "initialize a local repository in the folder you are cur.rently working in.",
+        "week": 1,
+        "subject": "file management, git",
+        "required_for_code_to_work": true,
+        "required_parameters_or_arguments": null,
+        "optional_parameters": null
+    },
+    {
+        "id": 8,
+        "command": "git add <required argument>",
+        "command_name": "git add",
+        "command_description": "add some files to be tracked (always!).",
+        "week": 1,
+        "subject": "file management, git",
+        "required_for_code_to_work": true,
+        "required_parameters_or_arguments": "file name || if you want to add all files in current directory/ file just do a period like this: git add .",
+        "optional_parameters": null
+    },
+    {
+        "id": 9,
+        "command": "git commit <-m> <'initial commit'>",
+        "command_name": "git commit",
+        "command_description": "creates a snapshot of the files you just added or are tracking.",
+        "week": 1,
+        "subject": "file management, git",
+        "required_for_code_to_work": true,
+        "required_parameters_or_arguments": "1st argument is what branch you are commiting the files to (usually will just be -m), 2nd argument is the name of the commit always in quotations",
+        "optional_parameters": null
+    },
+    {
+        "id": 10,
+        "command": "git status",
+        "command_name": "git status",
+        "command_description": "tells you about this repository you are currently working in",
+        "week": 1,
+        "subject": "file management, git",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": null,
+        "optional_parameters": null
+    },
+    {
+        "id": 11,
+        "command": "git log",
+        "command_name": "git log",
+        "command_description": "show you a list of the commits, in reverse order in the repository you are currently working in.",
+        "week": 1,
+        "subject": "file management, git",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": null,
+        "optional_parameters": null
+    },
+    {
+        "id": 12,
+        "command": "git diff",
+        "command_name": "git difference",
+        "command_description": "tells you what you have changed since last commit on the repository you are currently working in",
+        "week": 1,
+        "subject": "file management, git",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": null,
+        "optional_parameters": null
+    },
+    {
+        "id": 13,
+        "command": "node <required argument>",
+        "command_name": "git difference",
+        "command_description": "uses node to run the file's code and show the given output of that code ran.",
+        "week": 1,
+        "subject": "node",
+        "required_for_code_to_work": false,
+        "required_parameters_or_arguments": "required argument is: whatever file you want to run the code on so code would look like this: node",
+        "optional_parameters": null
+    }
+]
