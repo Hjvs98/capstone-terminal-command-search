@@ -6,10 +6,24 @@
     <link rel="stylesheet" href="/styles">
     <link rel="icon" type="image/x-icon" href="https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/devmountain/original.png?1568083750">
   </head>
-  <body class="container">
+  <body class="container-home">
+    <nav class="nav_home">
+      <ol class="ol_home">
+        <li class="crumb"><a href="./byweek.html">By Week</a></li>
+        <li class="crumb"><a href="./bysubject.html">By Subject</a></li>
+        <li class="crumb"><a href="./features.html">Features</a></li>
+      </ol>
+    </nav>
+    
+  <div class="search_container">
+    <img id="dev_logo_home" src="/DevLogo_Standard.png" alt="devmountainlogo">
     <form action="search_function">
-        <input id="search" type="text">
+        <input id="search" type="text" placeholder=" Search">
+        <br>
+        <input type="button" value="I'm Feelin' Lucky" name="Im_feelin_lucky" id="feelin_lucky">
     </form>
+  </div>
+   
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="main.js"></script>
   <script src="/main.js"></script>
