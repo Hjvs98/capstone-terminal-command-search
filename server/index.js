@@ -13,7 +13,7 @@ app.get("/styles", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/index.css"));
 });
 app.get("/byweek", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/byweek.html"));
+  res.sendFile(path.join(__dirname, "../byweek.html"));
 });
 
 // app.get("/byweek", getCommands)
