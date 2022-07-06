@@ -13,19 +13,28 @@
 
 }
 #search {
-   text-align: left;
-   height: 4vh;
-   width: 25vw;
-   max-width: 35vw;
-   max-height: 4vh;
-   margin-top: 2.5vh;
-}
-#feelin_lucky {
-    text-align: center;
-    max-height: 3vh;
-    width: fit-content;
+    text-align: left;
+    font-size: 2.5vh;
+    height: 4vh;
+    width: 25vw;
+    max-width: 35vw;
+    max-height: 4vh;
     margin-top: 2.5vh;
-}
+    border-radius: 25px;
+    border: 2px solid gray; 
+ }
+ #feelin_lucky {
+     color: white;
+     text-align: center;
+     max-height: 3vh;
+     max-width: 30vw;
+     width: fit-content;
+     margin-top: 2.5vh;
+     font-size: 1.75vh;
+     border-radius: 25px;
+     border: 2px solid #3399cc;
+     background-color: #3399cc;
+ }
 .ol_home {
     list-style: none;
     display: flex;
