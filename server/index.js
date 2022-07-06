@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-
+const { getCommands } = require("./controller");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -12,6 +12,11 @@ app.get("/", function (req, res) {
 app.get("/styles", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/index.css"));
 });
+app.get("/byweek", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/byweek.html"));
+});
+
+// app.get("/byweek", getCommands)
 
 const port = process.env.PORT || 3005;
 
