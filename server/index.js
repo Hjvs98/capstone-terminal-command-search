@@ -1,12 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const { getCommands } = require("./controller");
-const { getPage } = require("./controller");
+
+const { getCommandsByWeek } = require("./controller.js");
+const { seed } = require("./seed.js");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
-//////////////////////////////////
+///////////////Basic Deployment///////////////////
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/home.html"));
 });
@@ -14,25 +16,22 @@ app.get("/styles", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/index.css"));
 });
 ///////////////////////////////////
-const {
-  getCommands,
-  deleteCommand,
-  createCommand,
-  updateCommand,
-} = require("./controller");
+// const {
+//   getPage,
+//   getCommands,
+//   deleteCommand,
+//   createCommand,
+//   updateCommand,
+// } = require("./controller");
 
-app.get(`/api/commands`, getCommands);
-app.delete(`/api/commands/:id`, deleteCommand);
-app.post(`/api/commands`, createCommand);
-app.put(`/api/commands/:id`, updateCommand);
-///////////////////////////
+// app.get(`/api/commands`, getCommands);
+// app.delete(`/api/commands/:id`, deleteCommand);
+// app.post(`/api/commands`, createCommand);
+// app.put(`/api/commands/:id`, updateCommand);
+/////////////Idea on how to connect//////////////
 
-// app.get("/byweek", function (req, res) {
-//   res.sendFile(path.join(__dirname, "../client/byweek.html"));
-// });
-
-// app.get("/byweek", getCommands)
-// app.get("/api/:value", getPage);
+app.get("/byweek", getCommandsByWeek);
+app.get("/seed", seed);
 
 const port = process.env.PORT || 3005;
 
