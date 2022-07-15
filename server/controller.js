@@ -44,7 +44,16 @@ module.exports = {
         res.sendStatus(500);
       });
   },
-
+  getPage: (req, res) => {
+    const value = req.params.value;
+    if (value === "By Week") {
+      res.send("http://localhost:3005/byweek");
+    } else if (value === "By Subject") {
+      res.send("http://localhost:3005/bysubject");
+    } else if (value === "Features") {
+      res.send("http://localhost:3005/features");
+    }
+  },
   deleteCommand: (req, res) => {
     let index = commands.findIndex((elem) => elem.id === +req.params.id);
     commands.splice(index, 1);
