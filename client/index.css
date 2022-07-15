@@ -35,7 +35,7 @@ a:active { text-decoration: none; }
     max-width: 35vw;
     max-height: 4vh;
     margin-top: 2.5vh;
-    border-radius: 25px;
+    border-radius: 12px;
     border: 2px solid gray; 
     min-width: fit-content;
  }
@@ -71,6 +71,7 @@ div.flex_container {
  display: flex;
  flex-direction: row;
  justify-content: space-around;
+ position: absolute;
 }
 div.nav_columns{
     align-items: center;
@@ -104,4 +105,11 @@ ol.navigation {
 #page_title{
     margin-top: 10vh;
     margin-left: 10vw;
+}
+.navigation-btns {
+     background-color: transparent;
+     padding-left: 1vw;
+     padding-right: 1vw;
+     color: gray;
+     border: transparent;
 }

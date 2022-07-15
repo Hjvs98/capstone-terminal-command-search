@@ -7,11 +7,12 @@ const getCommandsByWeek = () => {
   axios.get("/byweek").then((res) => {
     const data = res.data;
     data.forEach((element) => {
+      element.preventDefault();
       const week1Container = document.getElementById("#week-1");
       const week2Container = document.getElementById("#week-2");
-      const weeklyCommands = document.createElement("ul");
-      weeklyCommands.innerHTML = `<li class="command-names-bw">${command.command_name}</li>
-              <li>${command.command}</li> <li>${command.command_description}</li>`;
+      const weeklyCommands = document.createElement("div");
+      weeklyCommands.textContent = `<p> class="command-names-bw">${element.command_name}</p>
+              <p> class="command-names-bw">${element.command}</p> <p> class="command-names-bw">${element.command_description}</p>`;
       if (element.week === 1) {
         week1Container.appendChild(weeklyCommands);
       } else if (element.week === 2) {
@@ -42,14 +43,3 @@ weekBtn.addEventListener("click", getCommandsByWeek);
 //     );
 //   });
 // };
-
-// const getPage = (e) => {
-//   console.log(e);
-//   e.preventDefault();
-//   axios.get(`http://localhost:3005/${e.target.id}`).then((res) => {
-//     const data = res.data;
-//     location.href = data;
-//   });
-// };
-// weekBtn.addEventListener("click", getPage);
-// subBtn.addEventListener("click", getPage);

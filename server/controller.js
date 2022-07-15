@@ -29,6 +29,21 @@ module.exports = {
         res.sendStatus(500);
       });
   },
+  getCommandsBySubject: (req, res) => {
+    sequelize
+      .query(
+        `
+    SELECT * FROM commands
+    ORDER BY subject`
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0]);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+  },
 
   deleteCommand: (req, res) => {
     let index = commands.findIndex((elem) => elem.id === +req.params.id);
@@ -36,12 +51,26 @@ module.exports = {
     res.status(200).send(commands);
   },
   createCommand: (req, res) => {
-    let { title, rating, imageURL } = req.body;
+    let {
+      command,
+      command_name,
+      command_description,
+      week,
+      subject,
+      required_for_code_to_function,
+      required_parameters_or_arguments,
+      optional_parameters,
+    } = req.body;
     let newCommand = {
-      id: globalId,
-      title,
-      rating,
-      imageURL,
+      command_id,
+      command,
+      command_name,
+      command_description,
+      week,
+      subject,
+      required_for_code_to_function,
+      required_parameters_or_arguments,
+      optional_parameters,
     };
     commands.push(newCommand);
     res.status(200).send(commands);
