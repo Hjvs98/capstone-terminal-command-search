@@ -1,8 +1,4 @@
 const searchForm = document.querySelector(".search-form");
-const byWeek = document.querySelector("#by-week");
-const weekBtn = document.querySelector("#By Week");
-const subBtn = document.querySelector("#By Subject");
-const featBtn = document.querySelector("#Features");
 
 // const getCommandsByWeek = () => {
 //   axios.get("/byweek").then((res) => {
@@ -24,12 +20,20 @@ const featBtn = document.querySelector("#Features");
 // };
 // weekBtn.addEventListener("click", getCommandsByWeek);
 
-const getWeekPage = (e) =>
-  axios.get(`http://localhost:3005/byweek`).then((res) => {
-    const data = res.data;
-    location.href = data;
-  });
-weekBtn.addEventListener("click", getWeekPage);
+// const getPage = (e) => {
+//   axios
+//     .get(`http://localhost:3005/${e.target.value}`)
+//     .then((res) => {
+//       console.log(res);
+//       const data = res.data;
+//       location.href = data;
+//     })
+//     .catch((err) => console.log(err));
+// };
+// weekBtn.addEventListener("click", getPage);
+// subBtn.addEventListener("click", getPage);
+// featBtn.addEventListener("click", getPage);
+
 // subBtn.addEventListener("click", getPage);
 // featBtn.addEventListener("click", getPage);
 //const someArr = []; --> set up an array to hold the information you want to display as elements

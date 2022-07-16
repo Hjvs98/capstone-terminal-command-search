@@ -1,7 +1,8 @@
 const getCommandsBySubject = () => {
   axios
-    .get("http://localhost:3005/bysubject")
+    .get("http://localhost:3005/api/bysubject")
     .then((res) => {
+      console.log(res);
       res.data.forEach((elem) => {
         const commElem = `<div class="subject-display">
           <p>${elem.command_name}</p>
@@ -15,4 +16,4 @@ const getCommandsBySubject = () => {
     })
     .catch((err) => console.log(err));
 };
-window.addEventListener("load", getCommandsBySubject);
+// window.addEventListener("load", getCommandsBySubject);
