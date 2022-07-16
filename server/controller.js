@@ -18,8 +18,7 @@ module.exports = {
     sequelize
       .query(
         `
-    SELECT * FROM commands
-    ORDER BY week`
+    SELECT * FROM commands`
       )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);

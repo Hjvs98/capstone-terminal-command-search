@@ -33,6 +33,7 @@ app.get("/styledbyweek", function (req, res) {
 app.get("/byweekjs", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/byweek/byweek.js"));
 });
+app.get("/api/byweek", getCommandsByWeek);
 app.get("/bysubject", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/bysubject/bysubject.html"));
 });
