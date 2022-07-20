@@ -32,7 +32,7 @@
             <input class="cc-input" type="checkbox" id="required-for-code"><label for="required-for-code">Is this command required to run code?</label>
             <input class="cc-input" type="text" id="required-params" placeholder="Required Parameters or Arguments">
             <input class="cc-input" type="text" id="optional-params" placeholder="Optional Parameters or Arguments">
-            <input class="cc-input" type="submit" value="CREATE" id="submit-btn" class="btns">
+            <input class="cc-input" type="submit" value="CREATE" id="create-btn" class="btns">
           </form>
           <form action="update-command" class="feature-card" id="update-form">
             <h3 class="feature-titles">Update Command</h3>
@@ -56,7 +56,7 @@
       <div id="btn-container">
         <button id="get-all" value="api/features">GET ALL COMMANDS</button>
       </div>
-      <table id="return-all" cellspacing="15px">
+      <table id="return-all" >
         <tr>
           <th>Command Id</th>
           <th>Command Input</th>

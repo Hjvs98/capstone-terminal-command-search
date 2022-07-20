@@ -20,11 +20,21 @@ const getCommandsByWeek = () => {
     .get("http://localhost:3005/api/byweek")
     .then((res) => {
       res.data.forEach((elem) => {
-        const commElem = `<table class="week-display">
+        const commElem = `<table class="week-display" cellspacing="20px">
         <tr>
         <th class="telems">${elem.command_name}</th>
+        <th class="spacers" id="spacer-1">|</th>
         <th class="telems">${elem.command}</th>
+        <th class="spacers id="spacer-2">|</th>
         <th class="telems">${elem.command_description}</th>
+        <th class="spacers id="spacer-3">|</th>
+        <th class="telems">${elem.subject}</th>
+        <th class="spacers id="spacer-4">|</th>
+        <th class="telems">${elem.required_for_code_to_function}</th>
+        <th class="spacers id="spacer-5">|</th>
+        <th class="telems">${elem.required_parameters_or_arguments}</th>
+        <th class="spacers id="spacer-6">|</th>
+        <th class="telems">${elem.optional_parameters}</th>
         </tr>
       </table>`;
         if (elem.week === 1) {

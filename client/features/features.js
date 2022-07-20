@@ -50,7 +50,7 @@ const updateCommand = () => {
       upInputs.forEach((upInputs) => (upInputs.value = ""));
     });
 };
-const deleteCommand = (e) => {
+const deleteCommand = () => {
   const delInputs = document.querySelectorAll(".delete-inputs");
   const id = delInputs[0].value;
   axios

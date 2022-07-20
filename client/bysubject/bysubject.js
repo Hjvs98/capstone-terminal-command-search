@@ -10,6 +10,10 @@ const getCommandsBySubject = () => {
           <th class="comm-nam">${elem.command_name}</th>
           <th class="commz">${elem.command}</th>
           <th class="comm-des">${elem.command_description}</th>
+          <th>${elem.week}</th>
+          <th>${elem.required_for_code_to_function}</th>
+          <th>${elem.required_parameters_or_arguments}</th>
+          <th>${elem.optional_parameters}</th>
        
         </tr>`;
         const subList = document.querySelector(".subject-container");

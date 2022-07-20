@@ -59,7 +59,7 @@ a:active { text-decoration: none; }
     flex-flow: row wrap;
     margin-top: 4vh;
     align-content: flex-end;
-    
+    margin-left: 75vw;
 }
 #dev_logo_home {
  max-height: 10vh;
@@ -90,14 +90,14 @@ div.nav_columns:nth-of-type(3){
 div.nav_columns:nth-of-type(4){
     flex: .5;  
 }
-/* ol.navigation {
+ol.navigation {
     list-style: none;
     display: flex;
     flex-direction: row;
     max-height: 3vh;
     justify-content: space-around;
-    
-} */
+    margin-left: 75vw;
+}
 #dev_logo_page {
     max-height: 10vh;
     max-width: 20vw;
