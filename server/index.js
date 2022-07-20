@@ -4,6 +4,7 @@ const path = require("path");
 const {
   getCommandsByWeek,
   getCommandsBySubject,
+  getCommandsFeat,
   deleteCommand,
   createCommand,
   updateCommand,
@@ -53,14 +54,12 @@ app.get("/styledfeatures", function (req, res) {
 app.get("/featuresjs", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/features/features.js"));
 });
-
+app.get("/api/features", getCommandsFeat);
+app.post("/createcommand", createCommand);
+app.delete(`/deletecommand/:id`, deleteCommand);
+app.put(`/updatecommand/:id`, updateCommand);
 ///////////////////////////////////
 app.get("/seed", seed);
-
-// app.get(`/api/commands`, getCommands);
-// app.delete(`/api/commands/:id`, deleteCommand);
-// app.post(`/api/commands`, createCommand);
-// app.put(`/api/commands/:id`, updateCommand);
 
 const port = process.env.PORT || 3005;
 

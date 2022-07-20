@@ -22,9 +22,9 @@ const getCommandsByWeek = () => {
       res.data.forEach((elem) => {
         const commElem = `<table class="week-display">
         <tr>
-        <th>${elem.command_name}</th>
-        <th>${elem.command}</th>
-        <th>${elem.command_description}</th>
+        <th class="telems">${elem.command_name}</th>
+        <th class="telems">${elem.command}</th>
+        <th class="telems">${elem.command_description}</th>
         </tr>
       </table>`;
         if (elem.week === 1) {

@@ -4,20 +4,17 @@ const getCommandsBySubject = () => {
     .then((res) => {
       console.log(res);
       res.data.forEach((elem) => {
-        const commElem = `<table class="subject-display">
-        
+        const commElem = `
         <tr>
-         <th>${elem.subject}</th>
-          <th>${elem.command_name}</th>
-          <th>${elem.command}</th>
-          <th>${elem.command_description}</th>
-        </tr>
-          
-        </table>`;
+         <th class="subj">${elem.subject}</th>
+          <th class="comm-nam">${elem.command_name}</th>
+          <th class="commz">${elem.command}</th>
+          <th class="comm-des">${elem.command_description}</th>
+       
+        </tr>`;
         const subList = document.querySelector(".subject-container");
         subList.innerHTML += commElem;
       });
     })
     .catch((err) => console.log(err));
 };
-// window.addEventListener("load", getCommandsBySubject);

@@ -1,5 +1,5 @@
 // const commands = require("../db.json");
-// const commandId = 14;
+
 require("dotenv").config();
 const { CONNECTION_STRING } = process.env;
 const Sequelize = require("sequelize");
@@ -12,6 +12,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     },
   },
 });
+// const nextCommand = 4;
 
 module.exports = {
   getCommandsByWeek: (req, res) => {
@@ -40,23 +41,18 @@ module.exports = {
       })
       .catch((err) => {
         console.log(err);
-        res.sendStatus(500);
+        res.sendStatus(400);
       });
   },
-  getPage: (req, res) => {
-    const value = req.params.value;
-    if (value === "By Week") {
-      res.send("http://localhost:3005/byweek");
-    } else if (value === "By Subject") {
-      res.send("http://localhost:3005/bysubject");
-    } else if (value === "Features") {
-      res.send("http://localhost:3005/features");
-    }
-  },
-  deleteCommand: (req, res) => {
-    let index = commands.findIndex((elem) => elem.id === +req.params.id);
-    commands.splice(index, 1);
-    res.status(200).send(commands);
+  getCommandsFeat: (req, res) => {
+    sequelize
+      .query(`SELECT * FROM commands ORDER BY command_id`)
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0]);
+      })
+      .catch((err) => {
+        res.status(400).send("Unable to load all commands.");
+      });
   },
   createCommand: (req, res) => {
     let {
@@ -69,7 +65,24 @@ module.exports = {
       required_parameters_or_arguments,
       optional_parameters,
     } = req.body;
-    let newCommand = {
+
+    sequelize
+      .query(
+        `insert into commands (command, command_name, command_description, week, subject, required_for_code_to_function, required_parameters_or_arguments, optional_parameters)
+      values ('${command}', '${command_name}' , '${command_description}', ${week} , '${subject}', '${required_for_code_to_function}' , '${required_parameters_or_arguments}' , '${optional_parameters}')
+     ;`
+      )
+      .then(() => res.status(200).send("Your command has been created."))
+      .catch((err) =>
+        res
+          .status(400)
+          .send(
+            "Something went wrong, please make sure all fields are filled out and try again"
+          )
+      );
+  },
+  updateCommand: (req, res) => {
+    let {
       command_id,
       command,
       command_name,
@@ -79,14 +92,40 @@ module.exports = {
       required_for_code_to_function,
       required_parameters_or_arguments,
       optional_parameters,
-    };
-    commands.push(newCommand);
-    res.status(200).send(commands);
-    globalId++;
+    } = req.body;
+    sequelize
+      .query(
+        `update commands set command = '${command}',
+            command_name = '${command_name}',
+            command_description = '${command_description}',
+            week = ${week}
+            subject = ${subject}
+            required_for_code_to_function = ${required_for_code_to_function};
+            required_parameters_or_arguments = '${required_parameters_or_arguments}',
+            optional_parameters = '${optional_parameters}'
+            WHERE command_id EQUALS ${command_id}`
+      )
+      .then(() => res.status(200).send("Your command has been updated."))
+      .catch((err) =>
+        res
+          .status(400)
+          .send(
+            "Something went wrong, please make sure all fields are filled out and try again"
+          )
+      );
   },
-  updateCommand: (req, res) => {
-    let { id } = req.params;
-    let { type } = req.body;
-    let index = commands.findIndex((elem) => +elem.id === +id);
+  deleteCommand: (req, res) => {
+    sequelize
+      .query(`DELETE FROM commands WHERE command_id EQUALS ${req.params.id}`)
+      .then(() => {
+        res.status(200).send("successfully deleted from the database");
+      })
+      .catch((err) =>
+        res
+          .status(400)
+          .send(
+            "Unable to delete the command, please check the entered id and try again."
+          )
+      );
   },
 };

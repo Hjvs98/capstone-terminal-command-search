@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/styledfeatures">
     <link rel="icon" type="image/x-icon" href="https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/devmountain/original.png?1568083750">
   </head>
-  <body class="features-body-container">
+  <body class="features-body-container" >
     <div class="flex_container">
       <div class="nav_columns"><a href="/"><img id="dev_logo_page" src="https://s3.amazonaws.com/devmountain/www/img/DevLogo_Standard.png" alt="devmountainlogo"></a>
       </div>
@@ -22,16 +22,53 @@
         <h1>Features</h1>
       </div>
       <div class="flex-features">
-          <form action="create-command" class="feature-card">
+          <form action="createcommand" class="feature-card" id="create-card">
             <h3 class="feature-titles">Create Command</h3>
+            <input class="cc-input" type="text" id="command" placeholder="Command Input">
+            <input class="cc-input" type="text" id="command-name" placeholder="Command Name">
+            <input class="cc-input" type="text" id="command-descr" placeholder="Command Description">
+            <input class="cc-input" type="number" id="week-number" placeholder="Week Learned">
+            <input class="cc-input" type="text" id="subject" placeholder="Subject">
+            <input class="cc-input" type="checkbox" id="required-for-code"><label for="required-for-code">Is this command required to run code?</label>
+            <input class="cc-input" type="text" id="required-params" placeholder="Required Parameters or Arguments">
+            <input class="cc-input" type="text" id="optional-params" placeholder="Optional Parameters or Arguments">
+            <input class="cc-input" type="submit" value="CREATE" id="submit-btn" class="btns">
           </form>
-          <form action="update-command" class="feature-card">
+          <form action="update-command" class="feature-card" id="update-form">
             <h3 class="feature-titles">Update Command</h3>
+            <input class= "update-inputs" type="text" id="command_id" placeholder="Command ID">
+            <input class= "update-inputs" type="text" id="command" placeholder="Command Input">
+            <input class= "update-inputs" type="text" id="command-name" placeholder="Command Name">
+            <input class= "update-inputs" type="text" id="command-descr" placeholder="Command Description">
+            <input class= "update-inputs" type="number" id="week-number" placeholder="Week Learned">
+            <input class= "update-inputs" type="text" id="subject" placeholder="Subject">
+            <input class= "update-inputs" type="checkbox" id="required-for-code"><label for="required-for-code">Is this command required to run code?</label>
+            <input class= "update-inputs" type="text" id="required-params" placeholder="Required Parameters or Arguments">
+            <input class= "update-inputs" type="text" id="optional-params" placeholder="Optional Parameters or Arguments">
+            <input class= "update-inputs" type="submit" id="update-btn" class="btns" value="UPDATE">
           </form>
-          <form action="delete-command" class="feature-card">
+          <form action="deletecommand" class="feature-card" id="delete-form">
             <h3 class="feature-titles">Delete Command</h3>
+            <input class="delete-inputs" type="text" id="command_id" placeholder="Command ID">
+            <input class="delete-inputs" type="submit" id="delete-btn" class="btns" value="DELETE" >
           </form>
       </div>
+      <div id="btn-container">
+        <button id="get-all" value="api/features">GET ALL COMMANDS</button>
+      </div>
+      <table id="return-all" cellspacing="15px">
+        <tr>
+          <th>Command Id</th>
+          <th>Command Input</th>
+          <th>Command Name</th>
+          <th>Command Descriptions</th>
+          <th>Week Learned</th>
+          <th>Subject</th>
+          <th>Command Required to run code?</th>
+          <th>Req Params or Arguments</th>
+          <th>Optional Arguments</th>
+        </tr>
+      </table>
        
       
    

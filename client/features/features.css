@@ -48,3 +48,16 @@ h1 {
     justify-content: space-around;
 
 }
+.feature-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+table {
+    margin-top: 5vh;
+}
+#get-all {
+    align-items: center;
+    margin-left: 48%;
+    margin-top: 5vh;
+}

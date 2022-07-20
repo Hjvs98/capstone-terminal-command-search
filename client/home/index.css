@@ -56,15 +56,16 @@ a:active { text-decoration: none; }
     
     list-style: none;
     display: flex;
-    flex-direction: row ;
+    flex-flow: row wrap;
     margin-top: 4vh;
-    max-height: 3vh;
-    margin-left: 75vw;
+    align-content: flex-end;
     
 }
 #dev_logo_home {
  max-height: 10vh;
  max-width: 36vw;
+ min-width: 20vw; ;
+ min-height: 7vh;
  
 }
 div.flex_container {
@@ -89,15 +90,14 @@ div.nav_columns:nth-of-type(3){
 div.nav_columns:nth-of-type(4){
     flex: .5;  
 }
-ol.navigation {
+/* ol.navigation {
     list-style: none;
     display: flex;
     flex-direction: row;
-    max-width: 13vw;
     max-height: 3vh;
     justify-content: space-around;
-    margin-left: 55vw;
-}
+    
+} */
 #dev_logo_page {
     max-height: 10vh;
     max-width: 20vw;
@@ -112,4 +112,7 @@ ol.navigation {
      padding-right: 1vw;
      color: rgb(54, 54, 54);
      border: transparent;
+     font-size: 1.3vmin;
+     /* font-size: 1.8vh;
+     font-size: 1.8vw; */
 }
