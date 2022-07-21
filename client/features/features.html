@@ -8,7 +8,7 @@
   <body class="features-body-container" >
     <div class="flex_container">
       <div class="nav_columns"><a href="/"><img id="dev_logo_page" src="https://s3.amazonaws.com/devmountain/www/img/DevLogo_Standard.png" alt="devmountainlogo"></a>
-      </div>
+      
         <nav class="navi">
           <ol class="navigation">
             <li class="crumb" ><a href="/byweek"><button class="navigation-btns" id="by-week-btn" value="byweek">By Week</button></a></li>
@@ -17,6 +17,7 @@
           </ol>
         </nav>
       </div>
+    </div>
       
       <div id="page_title">
         <h1>Features</h1>
@@ -24,32 +25,50 @@
       <div class="flex-features">
           <form action="createcommand" class="feature-card" id="create-card">
             <h3 class="feature-titles">Create Command</h3>
-            <input class="cc-input" type="text" id="command" placeholder="Command Input">
-            <input class="cc-input" type="text" id="command-name" placeholder="Command Name">
-            <input class="cc-input" type="text" id="command-descr" placeholder="Command Description">
-            <input class="cc-input" type="number" id="week-number" placeholder="Week Learned">
-            <input class="cc-input" type="text" id="subject" placeholder="Subject">
-            <input class="cc-input" type="checkbox" id="required-for-code"><label for="required-for-code">Is this command required to run code?</label>
-            <input class="cc-input" type="text" id="required-params" placeholder="Required Parameters or Arguments">
-            <input class="cc-input" type="text" id="optional-params" placeholder="Optional Parameters or Arguments">
+            <label for="command" class="input-label">Command Input</label>
+            <input class="cc-input" type="text" id="command" placeholder="node required argument">
+            <label for="command-name" class="input-label">Command Name</label>
+            <input class="cc-input" type="text" id="command-name" placeholder="Node run">
+            <label for="command-descr" class="input-label">Command Description</label>
+            <input class="cc-input" type="text" id="command-descr" placeholder="uses node to run a files code and show the given output of that code ran.">
+            <label for="week-number" class="input-label">Week Learned</label>
+            <input class="cc-input" type="number" id="week-number" placeholder=2>
+            <label for="subject" class="input-label">Subject</label>
+            <input class="cc-input" type="text" id="subject" placeholder="Running Code">
+            <div class="required-container"><label for="required-for-code" class="input-label">Is this command required to run code?</label>
+              <input class="cc-input" type="checkbox" id="required-for-code"></div>
+            <label for="required-params" class="input-label">Required Params or Arguments</label>
+            <input class="cc-input" type="text" id="required-params" placeholder="required argument is whatever file you want to run the code on so code would look like this: node main.js">
+            <label for="required-params" class="input-label">Optional Params or Arguments</label>
+            <input class="cc-input" type="text" id="optional-params" placeholder="null">
             <input class="cc-input" type="submit" value="CREATE" id="create-btn" class="btns">
           </form>
           <form action="update-command" class="feature-card" id="update-form">
             <h3 class="feature-titles">Update Command</h3>
-            <input class= "update-inputs" type="text" id="command_id" placeholder="Command ID">
-            <input class= "update-inputs" type="text" id="command" placeholder="Command Input">
-            <input class= "update-inputs" type="text" id="command-name" placeholder="Command Name">
-            <input class= "update-inputs" type="text" id="command-descr" placeholder="Command Description">
-            <input class= "update-inputs" type="number" id="week-number" placeholder="Week Learned">
-            <input class= "update-inputs" type="text" id="subject" placeholder="Subject">
-            <input class= "update-inputs" type="checkbox" id="required-for-code"><label for="required-for-code">Is this command required to run code?</label>
-            <input class= "update-inputs" type="text" id="required-params" placeholder="Required Parameters or Arguments">
-            <input class= "update-inputs" type="text" id="optional-params" placeholder="Optional Parameters or Arguments">
+            <label for="command-id" class="input-label">Command Id</label>
+            <input class="update-inputs" type="text" id="command-id" placeholder=3>
+            <label for="command" class="input-label">Command Input</label>
+            <input class="update-inputs" type="text" id="command" placeholder="node required argument">
+            <label for="command-name" class="input-label">Command Name</label>
+            <input class="update-inputs" type="text" id="command-name" placeholder="Run Node">
+            <label for="command-descr" class="input-label">Command Description</label>
+            <input class="update-inputs" type="text" id="command-descr" placeholder="uses node to run a files code and show the given output of that code ran.">
+            <label for="week-number" class="input-label">Week Learned</label>
+            <input class="update-inputs" type="number" id="week-number" placeholder=2>
+            <label for="subject" class="input-label">Subject</label>
+            <input class="update-inputs" type="text" id="subject" placeholder="Running Code">
+            <div class="required-container"><label for="required-for-code" class="input-label">Is this command required to run code?</label>
+              <input class="update-inputs" type="checkbox" id="required-for-code"></div>
+            <label for="required-params" class="input-label">Required Params or Arguments</label>
+            <input class="update-inputs" type="text" id="required-params" placeholder="required argument is whatever file you want to run the code on so code would look like this: node main.js">
+            <label for="required-params" class="input-label">Optional Params or Arguments</label>
+            <input class="update-inputs" type="text" id="optional-params" placeholder="null">
             <input class= "update-inputs" type="submit" id="update-btn" class="btns" value="UPDATE">
           </form>
           <form action="deletecommand" class="feature-card" id="delete-form">
             <h3 class="feature-titles">Delete Command</h3>
-            <input class="delete-inputs" type="text" id="command_id" placeholder="Command ID">
+            <label for="command-id-del" class="input-label">Command Id</label>
+            <input class="delete-inputs" type="text" id="command-id-del" placeholder="13">
             <input class="delete-inputs" type="submit" id="delete-btn" class="btns" value="DELETE" >
           </form>
       </div>
@@ -64,7 +83,7 @@
           <th>Command Descriptions</th>
           <th>Week Learned</th>
           <th>Subject</th>
-          <th>Command Required to run code?</th>
+          <th>Required to run code?</th>
           <th>Req Params or Arguments</th>
           <th>Optional Arguments</th>
         </tr>

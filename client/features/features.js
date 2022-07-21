@@ -6,15 +6,16 @@ const getAll = document.querySelector("#get-all");
 
 const createCommand = () => {
   const ccInputs = document.querySelectorAll(".cc-input");
+  console.log(typeof ccInputs[5].value);
   const body = {
-    command: ccInputs[0],
-    command_name: ccInputs[1],
-    command_description: ccInputs[2],
-    week: ccInputs[3],
-    subject: ccInputs[4],
-    required_for_code_to_function: ccInputs[5],
-    required_parameters_or_arguments: ccInputs[6],
-    optional_parameters: ccInputs[7],
+    command: ccInputs[0].value,
+    command_name: ccInputs[1].value,
+    command_description: ccInputs[2].value,
+    week: ccInputs[3].value,
+    subject: ccInputs[4].value,
+    required_for_code_to_function: ccInputs[5].value === "on",
+    required_parameters_or_arguments: ccInputs[6].value,
+    optional_parameters: ccInputs[7].value,
   };
   axios
     .post("/createcommand", body)
@@ -30,15 +31,15 @@ const createCommand = () => {
 const updateCommand = () => {
   const upInputs = document.querySelectorAll(".update-inputs");
   const body = {
-    command_id: upInputs[0],
-    command: upInputs[1],
-    command_name: upInputs[2],
-    command_description: upInputs[3],
-    week: upInputs[4],
-    subject: upInputs[5],
-    required_for_code_to_function: upInputs[6],
-    required_parameters_or_arguments: upInputs[7],
-    optional_parameters: upInputs[8],
+    command_id: upInputs[0].value,
+    command: upInputs[1].value,
+    command_name: upInputs[2].value,
+    command_description: upInputs[3].value,
+    week: upInputs[4].value,
+    subject: upInputs[5].value,
+    required_for_code_to_function: upInputs[6].value === "on",
+    required_parameters_or_arguments: upInputs[7].value,
+    optional_parameters: upInputs[8].value,
   };
   const id = upInputs[0].value;
   axios
@@ -75,15 +76,15 @@ const getCommandsFeat = () => {
       res.data.forEach((elem) => {
         const newElem = `
         <tr>
-          <th>${elem.command_id}</th>
-          <th>${elem.command}</th>
-          <th>${elem.command_name}</th>
-          <th>${elem.command_description}</th>
-          <th>${elem.week}</th>
-          <th>${elem.subject}</th>
-          <th>${elem.required_for_code_to_function}</th>
-          <th>${elem.required_parameters_or_arguments}</th>
-          <th>${elem.optional_parameters}</th>
+          <th class=telems>${elem.command_id}</th>
+          <th class=telems>${elem.command}</th>
+          <th class=telems>${elem.command_name}</th>
+          <th class=telems>${elem.command_description}</th>
+          <th class=telems>${elem.week}</th>
+          <th class=telems>${elem.subject}</th>
+          <th class=telems>${elem.required_for_code_to_function}</th>
+          <th class=telems>${elem.required_parameters_or_arguments}</th>
+          <th class=telems>${elem.optional_parameters}</th>
         </tr>`;
         commList.innerHTML += newElem;
       });

@@ -16,7 +16,8 @@ module.exports = {
     sequelize
       .query(
         `
-        drop table commands
+        drop table commands;
+
         create table commands (
             command_id serial primary key, 
             command varchar(300),
@@ -30,15 +31,17 @@ module.exports = {
         );
 
         insert into commands (command, command_name, command_description, week, subject, required_for_code_to_function, required_parameters_or_arguments, optional_parameters)
-        values ('ls', 'list', 'short for list' , 'shows all the files/folder where you currently are.', 1, 'file management', false, null, null),
+        values ('ls', 'list', 'shows all the files/folder where you currently are', 1, 'file management', false, null, null),
          ('cd required parameter', 'change directory', 'go to a different directory or file', 1, 'file management', true, 'what file or directory you want to navigate to', null),
          ('node required parameter', 'run node', 'run node which runs your code', 2, 'running code', true, 'what file you want to run code for.', null);
        `
       )
       .then(() => {
-        console.log("DB seeded!");
-        res.sendStatus(200);
+        res.status(200).send("Database seeded succesfully!");
       })
-      .catch((err) => console.log("error seeding DB", err));
+      .catch((err) => {
+        console.log(err);
+        res.status(400).send("Unable to seed database correctly.");
+      });
   },
 };

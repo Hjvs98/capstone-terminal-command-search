@@ -8,7 +8,6 @@ const {
   deleteCommand,
   createCommand,
   updateCommand,
-  getPage,
 } = require("./controller");
 const { seed } = require("./seed.js");
 

@@ -7,7 +7,6 @@ body.container-home {
 }
 a{
     color: rgb(46, 46, 46);
-    padding: 1vh;
 }
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
@@ -39,7 +38,7 @@ a:active { text-decoration: none; }
     border: 2px solid gray; 
     min-width: fit-content;
  }
- #feelin_lucky {
+ .home-btns {
      color: white;
      text-align: center;
      max-height: 3vh;
@@ -52,6 +51,10 @@ a:active { text-decoration: none; }
      background-color: #3399cc;
      min-width: fit-content;
  }
+ .nav_home {
+    display: flex;
+    justify-content: flex-end;
+ }
 .ol_home {
     
     list-style: none;
@@ -59,7 +62,6 @@ a:active { text-decoration: none; }
     flex-flow: row wrap;
     margin-top: 4vh;
     align-content: flex-end;
-    margin-left: 75vw;
 }
 #dev_logo_home {
  max-height: 10vh;
@@ -110,9 +112,14 @@ ol.navigation {
      background-color: transparent;
      padding-left: 1vw;
      padding-right: 1vw;
-     color: rgb(54, 54, 54);
+     color: rgb(105, 105, 105);
      border: transparent;
-     font-size: 1.3vmin;
-     /* font-size: 1.8vh;
-     font-size: 1.8vw; */
+     font-size: 1em;
+     font-weight: 500;
+     cursor: pointer;
+}
+
+.navigation-btns:hover {
+    color: rgb(48, 48, 48);
+    transition: all 0.25s linear;
 }

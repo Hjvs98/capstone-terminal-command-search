@@ -55,32 +55,31 @@ module.exports = {
       });
   },
   createCommand: (req, res) => {
-    let {
-      command,
-      command_name,
-      command_description,
-      week,
-      subject,
-      required_for_code_to_function,
-      required_parameters_or_arguments,
-      optional_parameters,
-    } = req.body;
+    const commandIn = req.body.command;
+    const commandName = req.body.command_name;
+    const commandDesc = req.body.command_description;
+    const weekL = req.body.week;
+    const subj = req.body.subject;
+    const requiredFun = req.body.required_for_code_to_function;
+    const reqPA = req.body.required_parameters_or_arguments;
+    const optPA = req.body.optional_parameters;
 
     sequelize
       .query(
         `insert into commands (command, command_name, command_description, week, subject, required_for_code_to_function, required_parameters_or_arguments, optional_parameters)
-      values ('${command}', '${command_name}' , '${command_description}', 
-      ${week} , '${subject}', ${required_for_code_to_function} , '${required_parameters_or_arguments}' , '${optional_parameters}')
+      values ('${commandIn}', '${commandName}', '${commandDesc}', 
+      ${weekL}, '${subj}', ${requiredFun}, '${reqPA}', '${optPA}')
      `
       )
       .then(() => res.status(200).send("Your command has been created."))
-      .catch((err) =>
+      .catch((err) => {
+        console.log(err);
         res
           .status(400)
           .send(
             "Something went wrong, please make sure all fields are filled out and try again"
-          )
-      );
+          );
+      });
   },
   updateCommand: (req, res) => {
     let {
@@ -99,21 +98,21 @@ module.exports = {
         `update commands set command = '${command}',
             command_name = '${command_name}',
             command_description = '${command_description}',
-            week = ${week}
-            subject = ${subject}
-            required_for_code_to_function = ${required_for_code_to_function};
+            week = ${week},
+            subject = '${subject}',
+            required_for_code_to_function = ${required_for_code_to_function},
             required_parameters_or_arguments = '${required_parameters_or_arguments}',
             optional_parameters = '${optional_parameters}'
             WHERE command_id = ${command_id}`
       )
       .then(() => res.status(200).send("Your command has been updated."))
-      .catch((err) =>
+      .catch((err) => {
         res
           .status(400)
           .send(
             "Something went wrong, please make sure all fields are filled out and try again"
-          )
-      );
+          );
+      });
   },
   deleteCommand: (req, res) => {
     sequelize

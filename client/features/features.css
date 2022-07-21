@@ -13,32 +13,43 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 .flex_container {
-    display: flex;
-
+    width: 100%;
 }
-
+.navi {
+    display: flex;
+    justify-content: flex-end;
+ }
 ol.navigation {
     display: flex;
     flex-direction: row;
-    list-style: none;
-    margin-left: 75vw;
-    
+    list-style: none; 
 }
 #dev_logo_page {
     max-height: 10vh;
     max-width: 20vw;
     position: absolute;
    }
-#page_title{
+
+.navigation-btns {
+    background-color: transparent;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: white;
+    border: transparent;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+}
+.navigation-btns:hover {
+    color: rgb(48, 48, 48);
+    transition: all 0.35s linear;
+    background-color: lightgray;
+    border-radius: 5px ;
+}
+ /* //////PAGE STYLING////////  */
+ #page_title{
     margin-top: 2vh;
     margin-left: 5vw;
-}
-.navigation-btns {
-     background-color: transparent;
-     padding-left: 1vw;
-     padding-right: 1vw;
-     color: white;
-     border: transparent;
 }
 h1 {
     margin-top: 1vh ;
@@ -58,7 +69,8 @@ h1 {
     border-radius: 15px;
     background-color: lightseagreen;
     width: 15vw;
-    height: 40vh;
+    height: fit-content;
+    padding: 10px 5px;
     
 }
 input {
@@ -79,10 +91,11 @@ table {
     background-color: lightseagreen;
     border: solid 1px rgb(66, 66, 66) ;
     border-radius: 7.5px;
-    height: 4vh;
+    height: fit-content;
     width: 15vw;
     color: white;
     font-size: 1rem;
+
 }
 #return-all {
     width: 100%;
@@ -96,9 +109,23 @@ table {
     background-color: rgb(66, 66, 66);
     margin-top: 1vh;
     color: white;
+    cursor: pointer;
 }
 #required-for-code {
     width: 7.5vw;
 }
-label {width:7.5vw;
-text-align: center;}
+
+label.input-label {
+    width: 9vw;
+    text-align: left;
+}
+
+div.required-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.telems{
+    font-weight: 400;
+}
+

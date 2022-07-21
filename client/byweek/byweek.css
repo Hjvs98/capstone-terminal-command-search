@@ -14,47 +14,47 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 .flex_container {
-    display: flex;
-
+    width: 100%;
 }
-
+.navi {
+    display: flex;
+    justify-content: flex-end;
+ }
 ol.navigation {
     display: flex;
     flex-direction: row;
-    list-style: none;
-    margin-left: 75vw;
-    
+    list-style: none; 
 }
 #dev_logo_page {
     max-height: 10vh;
     max-width: 20vw;
     position: absolute;
    }
+
+.navigation-btns {
+    background-color: transparent;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: white;
+    border: transparent;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+}
+.navigation-btns:hover {
+    color: rgb(48, 48, 48);
+    transition: all 0.35s linear;
+    background-color: lightgray;
+    border-radius: 5px ;
+}
+/*  ////////PAGE STYLING///////// */
 #page_title{
     margin-top: 2vh;
     margin-left: 5vw;
 }
-.navigation-btns {
-     background-color: transparent;
-     padding-left: 1vw;
-     padding-right: 1vw;
-     color: white;
-     border: transparent;
-}
 h1 {
     margin-top: 0vh ;
 }
-/* .spacers {
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
-} */
-
-
-
-/* .telems {
-    padding-left: 5vw;
-    padding-right: 5vw;
-} */
 #weeks {
     text-align: left;
     margin-left: 8vw;
