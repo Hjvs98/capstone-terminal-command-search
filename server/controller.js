@@ -69,8 +69,9 @@ module.exports = {
     sequelize
       .query(
         `insert into commands (command, command_name, command_description, week, subject, required_for_code_to_function, required_parameters_or_arguments, optional_parameters)
-      values ('${command}', '${command_name}' , '${command_description}', ${week} , '${subject}', '${required_for_code_to_function}' , '${required_parameters_or_arguments}' , '${optional_parameters}')
-     ;`
+      values ('${command}', '${command_name}' , '${command_description}', 
+      ${week} , '${subject}', ${required_for_code_to_function} , '${required_parameters_or_arguments}' , '${optional_parameters}')
+     `
       )
       .then(() => res.status(200).send("Your command has been created."))
       .catch((err) =>
@@ -103,7 +104,7 @@ module.exports = {
             required_for_code_to_function = ${required_for_code_to_function};
             required_parameters_or_arguments = '${required_parameters_or_arguments}',
             optional_parameters = '${optional_parameters}'
-            WHERE command_id EQUALS ${command_id}`
+            WHERE command_id = ${command_id}`
       )
       .then(() => res.status(200).send("Your command has been updated."))
       .catch((err) =>
@@ -116,7 +117,7 @@ module.exports = {
   },
   deleteCommand: (req, res) => {
     sequelize
-      .query(`DELETE FROM commands WHERE command_id EQUALS ${req.params.id}`)
+      .query(`DELETE FROM commands WHERE command_id = ${req.params.id}`)
       .then(() => {
         res.status(200).send("successfully deleted from the database");
       })

@@ -30,6 +30,7 @@ const createCommand = () => {
 const updateCommand = () => {
   const upInputs = document.querySelectorAll(".update-inputs");
   const body = {
+    command_id: upInputs[0],
     command: upInputs[1],
     command_name: upInputs[2],
     command_description: upInputs[3],
@@ -39,6 +40,7 @@ const updateCommand = () => {
     required_parameters_or_arguments: upInputs[7],
     optional_parameters: upInputs[8],
   };
+  const id = upInputs[0].value;
   axios
     .put(`/updatecommand/${id}`, body)
     .then((res) => {

@@ -134,12 +134,12 @@
     {
         "id": 13,
         "command": "node <required argument>",
-        "command_name": "git difference",
+        "command_name": "rune node",
         "command_description": "uses node to run the file's code and show the given output of that code ran.",
-        "week": 1,
+        "week": 2,
         "subject": "node",
         "required_for_code_to_work": false,
-        "required_parameters_or_arguments": "required argument is: whatever file you want to run the code on so code would look like this: node",
+        "required_parameters_or_arguments": "required argument is: whatever file you want to run the code on so code would look like this: node main.js",
         "optional_parameters": null
     }
 ]
