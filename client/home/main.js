@@ -3,7 +3,7 @@ const seedBtn = document.getElementById("seed-btn");
 
 const dbSeeding = () => {
   axios
-    .get("http://localhost:3005/seed")
+    .get("/seed")
     .then((res) => {
       alert(res.data);
     })

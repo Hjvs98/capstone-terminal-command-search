@@ -70,7 +70,7 @@ const deleteCommand = () => {
 
 const getCommandsFeat = () => {
   axios
-    .get("http://localhost:3005/api/features")
+    .get("/api/features")
     .then((res) => {
       console.log(res);
       res.data.forEach((elem) => {

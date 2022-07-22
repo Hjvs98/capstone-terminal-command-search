@@ -17,7 +17,7 @@ const weekSixteen = document.querySelector("#week-2");
 
 const getCommandsByWeek = () => {
   axios
-    .get("http://localhost:3005/api/byweek")
+    .get("/api/byweek")
     .then((res) => {
       res.data.forEach((elem) => {
         const commElem = `<table class="week-display" cellspacing="20px">

@@ -1,6 +1,6 @@
 const getCommandsBySubject = () => {
   axios
-    .get("http://localhost:3005/api/bysubject")
+    .get("/api/bysubject")
     .then((res) => {
       console.log(res);
       res.data.forEach((elem) => {
