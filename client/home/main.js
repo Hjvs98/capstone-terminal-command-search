@@ -11,6 +11,14 @@ const dbSeeding = () => {
       alert(err.response.data);
     });
 };
+const dbSeedLoad = () => {
+  axios
+    .get("/api/seed")
+    .then((res) => console.log(res.data))
+    .catch((err) => {
+      console.log(err.response.data);
+    });
+};
 seedBtn.addEventListener("click", (e) => {
   e.preventDefault();
   dbSeeding();

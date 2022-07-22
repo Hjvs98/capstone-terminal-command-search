@@ -42,6 +42,9 @@ const updateCommand = () => {
     optional_parameters: upInputs[8].value,
   };
   const id = upInputs[0].value;
+  if (id === "") {
+    alert("You must include the command id in order to update.");
+  }
   axios
     .put(`/updatecommand/${id}`, body)
     .then((res) => {

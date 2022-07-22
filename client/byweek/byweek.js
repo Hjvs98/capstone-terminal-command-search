@@ -1,19 +1,19 @@
 const weekOne = document.querySelector("#week-1");
 const weekTwo = document.querySelector("#week-2");
-const weekThree = document.querySelector("#week-2");
-const weekFour = document.querySelector("#week-2");
-const weekFive = document.querySelector("#week-2");
-const weekSix = document.querySelector("#week-2");
-const weekSeven = document.querySelector("#week-2");
-const weekEight = document.querySelector("#week-2");
-const weekNine = document.querySelector("#week-2");
-const weekTen = document.querySelector("#week-2");
-const weekEleven = document.querySelector("#week-2");
-const weekTwelve = document.querySelector("#week-2");
-const weekThirteen = document.querySelector("#week-2");
-const weekFourteen = document.querySelector("#week-2");
-const weekFifteen = document.querySelector("#week-2");
-const weekSixteen = document.querySelector("#week-2");
+const weekThree = document.querySelector("#week-3");
+const weekFour = document.querySelector("#week-4");
+const weekFive = document.querySelector("#week-5");
+const weekSix = document.querySelector("#week-6");
+const weekSeven = document.querySelector("#week-7");
+const weekEight = document.querySelector("#week-8");
+const weekNine = document.querySelector("#week-9");
+const weekTen = document.querySelector("#week-10");
+const weekEleven = document.querySelector("#week-11");
+const weekTwelve = document.querySelector("#week-12");
+const weekThirteen = document.querySelector("#week-13");
+const weekFourteen = document.querySelector("#week-14");
+const weekFifteen = document.querySelector("#week-15");
+const weekSixteen = document.querySelector("#week-16");
 
 const getCommandsByWeek = () => {
   axios
@@ -22,9 +22,9 @@ const getCommandsByWeek = () => {
       res.data.forEach((elem) => {
         const commElem = `<table class="week-display" cellspacing="20px">
         <tr>
-        <th class="telems">${elem.command_name}</th>
-        <th class="spacers" id="spacer-1">|</th>
         <th class="telems">${elem.command}</th>
+        <th class="spacers" id="spacer-1">|</th>
+        <th class="telems">${elem.command_name}</th>
         <th class="spacers id="spacer-2">|</th>
         <th class="telems">${elem.command_description}</th>
         <th class="spacers id="spacer-3">|</th>

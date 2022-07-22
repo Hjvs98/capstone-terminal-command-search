@@ -110,7 +110,7 @@ module.exports = {
         res
           .status(400)
           .send(
-            "Something went wrong, please make sure all fields are filled out and try again"
+            "Something went wrong please make sure all fields are filled out and try again"
           );
       });
   },

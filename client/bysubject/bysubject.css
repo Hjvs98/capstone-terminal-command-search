@@ -67,3 +67,7 @@ table {
 .headerz {
     font-size: large;
 }
+.telems {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}

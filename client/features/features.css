@@ -68,7 +68,7 @@ h1 {
     border: solid 2px;
     border-radius: 15px;
     background-color: lightseagreen;
-    width: 15vw;
+    width: 22vw;
     height: fit-content;
     padding: 10px 5px;
     
@@ -79,7 +79,7 @@ input {
     border: solid 1px gray;
     padding: 2px;
     background-color: lightgray;
-    width: 9vw;
+    width: 15vw;
 }
 table {
     margin-top: 5vh;
@@ -103,7 +103,7 @@ table {
     color: white;
 }
 #delete-btn, #create-btn, #update-btn {
-    width: 10vw;
+    width: 15vw;
     height: 3vh;
     border: solid 1.5px black;
     background-color: rgb(66, 66, 66);
@@ -116,7 +116,7 @@ table {
 }
 
 label.input-label {
-    width: 9vw;
+    width: 15vw;
     text-align: left;
 }
 
