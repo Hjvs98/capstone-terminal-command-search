@@ -59,7 +59,6 @@ app.delete(`/deletecommand/:id`, deleteCommand);
 app.put(`/updatecommand/:id`, updateCommand);
 ///////////////////////////////////
 app.get("/seed", seed);
-app.get("/api/seed", seed);
 
 const port = process.env.PORT || 3005;
 
